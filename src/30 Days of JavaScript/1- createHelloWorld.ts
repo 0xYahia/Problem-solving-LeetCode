@@ -1,6 +1,6 @@
 function createHelloWorld() {
 
-  return function (...args: string[]): string {
+  return function (..._args: string[]): string {
     return 'Hello World';
   };
 }
