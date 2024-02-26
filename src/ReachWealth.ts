@@ -30,7 +30,7 @@
 function maximumWealth(accounts: number[][]): number {
   let maxWealth: number = 0;
   for (const account of accounts) {
-    const totalWealth = account.reduce((acc, val) => acc + val, 0);
+    const totalWealth: number = account.reduce((acc, val) => acc + val, 0);
     maxWealth = Math.max(maxWealth, totalWealth);
   }
 
@@ -66,13 +66,13 @@ console.log(
 //! 2nd solution
 
 function maximumWealth2(accounts: number[][]): number {
-  let max = 0;
+  let max: number = 0;
 
-  for (let i = 0; i < accounts.length; i++) {
-    const account = accounts[i];
-    let accountSum = 0;
+  for (let i: number = 0; i < accounts.length; i++) {
+    const account: number[] = accounts[i];
+    let accountSum: number = 0;
 
-    for (let j = 0; j < account.length; j++) {
+    for (let j: number = 0; j < account.length; j++) {
       accountSum += account[j];
     }
 

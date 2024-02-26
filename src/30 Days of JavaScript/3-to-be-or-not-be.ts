@@ -1,25 +1,28 @@
 type ToBeOrNotToBe = {
-  toBe: (val: any) => boolean;
-  notToBe: (val: any) => boolean;
+  toBe: (val: boolean) => boolean;
+  notToBe: (val: boolean) => boolean;
 };
 
-function expect(val: any): ToBeOrNotToBe {
-  const obj = {
+
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function expect(val: boolean) {
+  const obj: ToBeOrNotToBe = {
     toBe: (value: boolean) => {
       if (value === val)
-        return true
+        return true;
       else
-        throw new Error('Not Equal')
+        throw new Error('Not Equal');
     },
     notToBe: (value: boolean) => {
       if (value !== val)
-        return true
+        return true;
       else
-        throw new Error('Equal')
+        throw new Error('Equal');
     },
-  }
-  return obj
-};
+  };
+  return obj;
+}
 
 /**
 * expect(5).toBe(5); // true

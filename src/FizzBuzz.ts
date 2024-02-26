@@ -4,10 +4,10 @@
 // console.log(pages);
 
 function fizzBuzz(n: number): string[] {
-  let result: string[] = [];
-  const arr = Array(n)
+  const result: string[] = [];
+  const arr: number[] = Array(n)
     .fill(0)
-    .map((_: any, i) => i + 1);
+    .map((_: number, i) => i + 1);
   for (const num of arr) {
     if (num % 3 == 0 && num % 5 == 0) {
       result.push("FizzBuzz");
@@ -29,8 +29,8 @@ console.log(fizzBuzz(15));
 // Enhance
 
 function fizzBuzz2(n: number): string[] {
-  let result: string[] = [];
-  for (let i = 1; i <= n; i++) {
+  const result: string[] = [];
+  for (let i: number = 1; i <= n; i++) {
     if (i % 3 == 0 && i % 5 === 0) {
       result.push("FizzBuzz");
     } else if (i % 3 === 0) {
@@ -51,8 +51,8 @@ console.log(fizzBuzz2(15));
 // More Enhanced
 
 function fizzBuzz3(n: number): string[] {
-  const output = Array(n).fill("");
-  for (let i = 1; i <= n; i++) {
+  const output: string[] = Array(n).fill("");
+  for (let i: number = 1; i <= n; i++) {
     if (i % 3 == 0 && i % 5 == 0) {
       output[i - 1] = "FizzBuzz";
     } else if (i % 3 == 0) {

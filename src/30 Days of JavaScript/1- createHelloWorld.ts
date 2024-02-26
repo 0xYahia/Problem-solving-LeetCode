@@ -1,9 +1,9 @@
 function createHelloWorld() {
 
-  return function (..._args: string[]): string {
-    return 'Hello World'
+  return function (...args: string[]): string {
+    return 'Hello World';
   };
-};
+}
 
 /**
 * const f = createHelloWorld();

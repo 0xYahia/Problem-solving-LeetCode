@@ -25,7 +25,7 @@ console.log(numberOfSteps(123));
 
 // Enhanced
 function numberOfSteps2(num: number): number {
-  for (var i = 0; num != 0; num % 2 === 0 ? (num /= 2) : num--) {
+  for (var i: number = 0; num != 0; num % 2 === 0 ? (num /= 2) : num--) {
     i++;
   }
   return i;
