@@ -103,3 +103,32 @@ console.log(memoizedFn(1, 2)); // 3, callCount = 1 (not incremented because resu
  * memoizedFn(2, 3) // 5
  * console.log(callCount) // 1
  */
+
+
+
+//! Another Solution
+
+
+const memo = new Map();
+
+function memoize2(fn: Fn3): Fn3 {
+  return function (...args) {
+    let cache = memo.get(fn);
+    if (!cache) {
+      cache = new Map();
+      memo.set(fn, cache);
+    }
+
+    const argsJSON = JSON.stringify(args);
+
+    const result = cache.get(argsJSON);
+
+    if (cache.has(argsJSON)) {
+      return result;
+    } else {
+      const result = fn(...args);
+      cache.set(argsJSON, result);
+      return result;
+    }
+  }
+}
