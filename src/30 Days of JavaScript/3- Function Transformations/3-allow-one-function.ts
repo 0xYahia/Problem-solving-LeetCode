@@ -38,15 +38,15 @@ type OnceFn = (...args: JSONValue2[]) => JSONValue2 | undefined
 
 function once(fn: Function): OnceFn {
 
-  let result: JSONValue2 | undefined
+  let result: JSONValue2 | undefined;
   let called: boolean = false;
 
   return function (...args) {
     if (!called) {
       called = true;
-      result = fn(...args)
-    } else result = undefined
-    return result
+      result = fn(...args);
+    } else result = undefined;
+    return result;
   };
 }
 
